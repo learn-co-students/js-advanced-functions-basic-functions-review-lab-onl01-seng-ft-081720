@@ -28,9 +28,22 @@ let Calculator = {
     }
 }
 
+function createFareMultiplier(int){
+    debugger
+    if (int == 4){
+        return fareDoubler()
+    } else if (int == 3){
+        return fareTripler()
+    } else if (int == 2){
+        return fareQuadrupler()
+    } else {
+        return int
+    }
+}
+
 function actionApplyer(int, equations){
     console.log(int, equations)
-
+    
     if (equations.length == 0){
         return int
 
@@ -39,12 +52,17 @@ function actionApplyer(int, equations){
             // console.log(int)
             int = eq(int)
             console.log(eq(int))
-
         })
-
         return int
-
-
     }
+}
 
+const fareDoubler = function(fare){
+    return fare * 2
+}
+const fareTripler = function(fare){
+    return fare * 3
+}
+const fareQuadrupler = function(fare){
+    return fare * 4
 }
